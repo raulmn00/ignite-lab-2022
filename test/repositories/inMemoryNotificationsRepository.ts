@@ -3,6 +3,11 @@ import { NotificationRepository } from '@app/repositories/notificationRepository
 
 export class inMemoryNotificationRepository implements NotificationRepository {
   public notifications: NotificationEntity[] = [];
+  async countManyByRecipientId(recipientId: string): Promise<number> {
+    return this.notifications.filter(
+      (notification) => notification.recipientId === recipientId,
+    ).length;
+  }
 
   async save(notification: NotificationEntity): Promise<void> {
     const notificationIndex = this.notifications.findIndex(
