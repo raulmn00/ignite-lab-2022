@@ -3,7 +3,6 @@ import { NotificationEntity } from '@app/entities/notification';
 import { NotificationRepository } from '@app/repositories/notificationRepository';
 import { PrismaService } from '../prisma.service';
 import { PrismaNotificationMapper } from '../mappers/prismaNotificationMapper';
-import { notContains } from 'class-validator';
 
 @Injectable()
 export class PrismaNotificationsRepository implements NotificationRepository {
