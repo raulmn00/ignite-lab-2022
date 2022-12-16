@@ -5,4 +5,7 @@ export abstract class NotificationRepository {
   abstract findById(notificationId: string): Promise<NotificationEntity | null>;
   abstract save(notification: NotificationEntity): Promise<void>;
   abstract countManyByRecipientId(recipientId: string): Promise<number>;
+  abstract findManyByRecipientId(
+    recipientId: string,
+  ): Promise<NotificationEntity[]>;
 }
